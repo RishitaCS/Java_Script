@@ -1,0 +1,48 @@
+.heading {
+    padding: 10px 30px;
+    text-align: center;
+}
+.Height_input {
+    margin-inline-start: 310px;
+    padding: 10px 30px;
+}
+.Weight_input {
+    margin-inline-start: 300px;
+    padding: 10px 30px;
+}
+.btn {
+    margin-inline-start: 450px;
+    padding: 10px 30px;
+}
+.info {
+    margin-left: 330px;
+    margin-top: 100px;
+    display: block;
+}
+
+#results {
+    font-size: 35px;
+    margin-left: 90px;
+    margin-top: 20px;
+    color: rgb(241, 241, 241);
+}
+
+.Home_btn {
+    background-color: #fff;
+    color: black;
+    border: solid #212121 2px;
+    border-radius: 8px;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin-left: 590px;
+}
+
+.Youtube_btn {
+    background-color: #fff;
+    color: black;
+    border: 2px solid #212121;
+    border-radius: 8px;
+    padding: 10px 30px;
+    text-decoration: none;
+    display: inline-block;
+}
