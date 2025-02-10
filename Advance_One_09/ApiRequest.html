@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Card</title>
+    <style>
+        body{
+            background-color:white;
+            align-items:center;
+            justify-content: center;
+            display: flex;
+            height: 200px;
+        }
+        .card{
+            background-color: black;
+            padding:20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .card img{
+            width:100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .card button{
+            background: #3b8de4;
+            color:white;
+            border:none;
+            padding:10px;
+            cursor:pointer;
+            border-radius: 5px;
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+    <p>0	UNSENT	Client has been created. open() not called yet.</p>
+    <p>1	OPENED	open() has been called.</p>
+    <p>2	HEADERS_RECEIVED	send() has been called, and headers and status are available.</p>    
+    <p>3	LOADING	Downloading; responseText holds partial data.</p>    
+    <p>4	DONE	The operation is complete.</p>
+
+<div class="card">
+    <img id="profile" src="">
+    <button id="followersbtn">Followers count</button>
+</div>
+
+
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+            document.getElementById("profile").src = data.avatar_url;
+            document.getElementById("followersbtn").innerText = data.followers;
+        }
+    };
+    xhr.send();
+</script>
+</body>
+</html>
